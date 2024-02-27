@@ -14,25 +14,31 @@ public class Account {
         if(balance > 0.0)
             this.balance=balance;
     }
-    //método que deposita(adiciona) apenas uma quantia válida no saldo
-    public void deposit(double depositAmount){
+
+    public void deposit(double depositAmount){ //método que deposita(adiciona) apenas uma quantia válida no saldo
         if(depositAmount > 0.0) //se depositAmount for válido
             balance = balance + depositAmount; //o adiciona ao saldo
     }
 
-    //método que retorna saldo da conta
-    public double getBalance(){
+    public void withdraw(double withdrawAmount){//método que retira quantia
+        if(withdrawAmount > balance)
+            System.out.println("Withdrawal amount exceeded account balance");
+        else
+            balance = balance - withdrawAmount;
+    }
+
+    public double getBalance(){ //método que retorna saldo da conta
         return balance;
     }
 
-    // método para definir o nome no objeto
-    public void setName(String name) {
+
+    public void setName(String name) { // método para definir o nome no objeto
 
         this.name = name; // armazena o nome
     }
 
-    // método para recuperar o nome do objeto
-    public String getName() {
+
+    public String getName() { // método para recuperar o nome do objeto
 
         return name; // retorna valor do nome para o chamador
     }
